@@ -26,7 +26,7 @@
 ---
 
 ## _Description_ 📃
-A Mario themed hangman. It contains various elements that are relevant to Mario by Nintendo (Words, color, pictures / animations, and background). State management is handled by React and Redux. 
+A Mario themed hangman. It contains various elements that are relevant to Mario by Nintendo (Words, color, pictures/animations, and background). State management is handled by React and Redux. 
 
 ---
 

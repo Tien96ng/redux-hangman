@@ -6,6 +6,7 @@ const hangmanState = {
   lettersCorrect: "", //[]
   lettersIncorrect: "",
   isGameOver: false,
+  coinSound: true,
   isWinner: function() {
     return this.word.split("").sort().join("") === this.lettersCorrect.split("").sort().join("");
   },
@@ -24,6 +25,12 @@ export function guessLetter(letter = '') {
 export function resetGame(){
   return {
     type: "RESET_GAME"
+  }
+}
+
+export function coinToggle() {
+  return {
+    type: "COIN_TOGGLE"
   }
 }
 
@@ -62,6 +69,11 @@ export default function hangmanReducer(state = hangmanState, action) {
         limit: function() {
           return this.word.length + 5;
         }
+      }
+    case "COIN_TOGGLE":
+      return {
+        ...state,
+        coinSound: !state.coinSound
       }
     
     default:

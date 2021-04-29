@@ -1,17 +1,43 @@
 import React from "react";
 import { connect } from "react-redux";
-import { guessLetter, resetGame } from "../redux/hangman";
+import { guessLetter, resetGame, coinToggle } from "../redux/hangman";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faVolumeDown, faVolumeOff, faVolumeUp } from '@fortawesome/free-solid-svg-icons'
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import coinAudio from "../sound/mario_coin_sound.mp3";
+
 
 function App(props) {
   let abc = "abcdefghijklmnopqrstuvwxyz".split("");
-  // function addStyle(id) {
-  //   document.getElementById(id).classList.add("shrink");
+  let clickAudio = new Audio(coinAudio);
+  clickAudio.volume = 0.02;
 
-  //   ///document.getElementById(id).style.width= keg.volume + "px";
-  // }
+  let handleClick = letter => {
+    props.guessLetter(letter);
+    clickAudio.play();
+  }
+
+  let handleClickSound = () => {
+    if(props.coinSound) {
+      clickAudio.volume = 0.02;
+      return faVolumeUp;
+    } else {
+      clickAudio.volume = 0;
+      return faVolumeOff;
+    }
+  }
+
+  let renderButtonVolume = () => {
+    return (
+      <Button onClick={() => props.coinToggle()}>
+        <FontAwesomeIcon icon={handleClickSound()} />
+      </Button>
+
+    )
+  }
+
   let renderLetterButtons = (abc) => abc.map((letter, index) => {
     
     return (
@@ -24,7 +50,7 @@ function App(props) {
             size="large" 
             id={index} 
             className="letter-btn"
-            onClick={() => props.guessLetter(letter)}
+            onClick={() => handleClick(letter)}
             disabled={props.lettersCorrect.includes(letter) || props.lettersIncorrect.includes(letter) || props.isGameOver}
             >
               {letter.toUpperCase()}
@@ -55,14 +81,21 @@ function App(props) {
 
   return (
     <Container maxWidth="sm" className="game">
-      {console.log(props)}
-      {console.log(gameOverMsg() !== undefined ? gameOverMsg().toLowerCase() : "notDone")}
+      {console.log(props.coinSound)}
       <h1>Welcome To Hangman</h1>
       <h1 className="grow">Number of Guesses Remaining: {props.limit() - props.numGuesses}</h1>
+    
       <Grid
         container 
         justify="center"
-        alignItems="center" 
+        alignItems="center"
+      >
+        <div className="volume-btn">{renderButtonVolume()}</div>
+      </Grid>
+      <Grid
+        container 
+        justify="center"
+        alignItems="center"
       >
         <h1 
           className={gameOverMsg() !== undefined ? gameOverMsg().toLowerCase() : "notDone"}
@@ -97,6 +130,7 @@ function mapStateToProps(state) {
     limit: state.limit,
     lettersIncorrect: state.lettersIncorrect,
     isWinner: state.isWinner,
+    coinSound: state.coinSound
 
   }
 }
@@ -104,6 +138,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   guessLetter: guessLetter,
   resetGame: resetGame,
+  coinToggle: coinToggle
 }
 
 // connect(Parts of State you need, Actions you want to perform)
