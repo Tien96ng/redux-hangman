@@ -81,7 +81,7 @@ function App(props) {
 
   return (
     <Container maxWidth="sm" className="game">
-      {console.log(props.coinSound)}
+      
       <h1>Welcome To Hangman</h1>
       <h1 className="grow">Number of Guesses Remaining: {props.limit() - props.numGuesses}</h1>
     
@@ -114,7 +114,7 @@ function App(props) {
           justify="center"
           alignItems="center" 
         >
-          <Button variant="contained" color="secondary" onClick={() => props.resetGame()} > Ragequit Reset </Button>
+          <Button variant="contained" color="secondary" onClick={() => props.resetGame()} > {props.isWinner() ? "Winner! Play Again?" : "Ragequit Reset"} </Button>
         </Grid>
       </Grid>      
     </Container>

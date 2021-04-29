@@ -22,6 +22,7 @@
 * **NPM**
 * **ESLint**
 * **Babel**
+* **FontAwesome**
 
 ---
 
