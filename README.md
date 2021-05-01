@@ -34,7 +34,7 @@ A Mario themed hangman. It contains various elements that are relevant to Mario 
 ## _Preview_ <img src="./public/img/luigi_dance.gif" height="30" />
 
 > [PLACEHOLDER] Insert a Gif of the Game <br />
-> [PLACEHOLDER] Insert Live Link <br />
+> [Live View](https://redux-hangman.herokuapp.com/) <br />
 
 ---
 
