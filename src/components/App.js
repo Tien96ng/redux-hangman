@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { guessLetter, resetGame, coinToggle } from "../redux/hangman";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faVolumeDown, faVolumeOff, faVolumeUp } from '@fortawesome/free-solid-svg-icons'
+import { faVolumeOff, faVolumeUp } from '@fortawesome/free-solid-svg-icons'
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -105,7 +105,7 @@ function App(props) {
         </h1>
       </Grid>
      
-      <h2 className="word">{renderHangMan(props.word)}</h2>
+      <h2 className={props.isWinner() ? "rainbow-text-animated word" : "word"}>{renderHangMan(props.word)}</h2>
       <br />
       <br />
       <Grid container spacing={1}>
@@ -113,9 +113,9 @@ function App(props) {
         <Grid 
           container 
           justify="center"
-          alignItems="center" 
+          alignItems="center"
         >
-          <Button variant="contained" color="secondary" onClick={() => props.resetGame()} > {props.isWinner() ? "Winner! Play Again?" : "Ragequit Reset"} </Button>
+          <Button variant="contained" color="secondary" onClick={() => props.resetGame()}> {props.isWinner() ? "Winner! Play Again?" : "Ragequit Reset"} </Button>
         </Grid>
       </Grid>      
     </Container>
