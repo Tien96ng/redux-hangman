@@ -140,12 +140,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ---
 
 ## _Known Bugs_ 🩹
-* 
+* Not responsive for mobile viewports less than 400px width.
+* Some longer words go past mobile viewports.
 
 ---
 
 ## _Future Updates_ <img src="./public/img/1up.png" height="20" />
-* 
+* Add Mobile responsiveness.
+* Add Account functionality to save all time wins.
+* Add Leaderboard for most wins.
 
 ---
 
