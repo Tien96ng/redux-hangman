@@ -83,8 +83,8 @@ function App(props) {
   return (
     <Container maxWidth="sm" className="game">
       
-      <h1>Welcome To Hangman</h1>
-      <h1 className="grow">Number of Guesses Remaining: {props.limit() - props.numGuesses}</h1>
+      <h1 className="title">LETSSA PLAY <span className="rainbow-text-animated">MARIO</span> HANGMAN</h1>
+      <h2 className="grow">Guesses Left: {props.limit() - props.numGuesses}</h2>
     
       <Grid
         container 

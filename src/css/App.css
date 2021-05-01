@@ -1,5 +1,21 @@
-.App {
+@font-face {
+  font-family: myFirstFont;
+  src: url(./font/SuperMarioBros-ov7d.ttf);
+}
+
+* {
+  font-family: myFirstFont;
+  letter-spacing: 3px;
+}
+
+h2 {
+  color: white;
+  margin: .5rem;
   text-align: center;
+}
+
+.title {
+  padding: 1rem 0 0 0;
 }
 
 .grow {
@@ -21,11 +37,11 @@
 }
 
 .won, .lost {
-  margin: 1rem 0 0 0;
+  margin: 1rem;
   color: white;
-  padding-top: 1rem;
+  padding: 1rem;
   animation: msg .45s;
-  width: 10rem; height: 4rem;
+  width: 13rem; height: 2rem;
   border-radius: 2rem;
 }
 
@@ -51,8 +67,27 @@
   }
 }
 
+.rainbow-text-animated {
+  background: linear-gradient(to right, #0197D2, gold , crimson, #43AA33, gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 3s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+  0%,100% {
+      background-position: 0 0;
+  }
+
+  50% {
+      background-position: 100% 0;
+  }
+}
+
 h1 {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   z-index: 21;
   position:relative;
   text-align: center;
