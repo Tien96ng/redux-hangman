@@ -3,12 +3,12 @@
 
 ### _Contributor(s) and Contact Info_ <img src="./public/img/mario_kiss.gif" height="25" />
 
-| Name            | Email               | GitHub  |   	|   	|
-|---	            |---	                |---	    |---	|---	|
-| Tien Nguyen	    |  tien96ng@gmail.com | [GitHub](https://github.com/Tien96ng) |   	|   	|
-| Connor Burgess  |   	                | [GitHub](https://github.com/ConnorBurgess)  	|   	|   	|
-| Logan Roth	    | logan.roth.g@gmail.com |  [GitHub(Lo-GR)](https://github.com/Lo-GR) 	|   	|   	|
-| Michael Kriegel | mikkrieg@gmail 	    | [Github](https://github.com/mikkrieg)	|   	|   	|
+| Name            | Email               | GitHub  |
+|---	            |---	                |---	    |
+| Tien Nguyen	    |  tien96ng@gmail.com | [GitHub](https://github.com/Tien96ng) |
+| Connor Burgess  |   	                | [GitHub](https://github.com/ConnorBurgess)  	|
+| Logan Roth	    | logan.roth.g@gmail.com |  [GitHub(Lo-GR)](https://github.com/Lo-GR) 	|
+| Michael Kriegel | mikkrieg@gmail 	    | [Github](https://github.com/mikkrieg)	|
 
 ---
 

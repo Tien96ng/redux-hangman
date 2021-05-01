@@ -12,6 +12,7 @@ import coinAudio from "../sound/mario_coin_sound.mp3";
 function App(props) {
   let abc = "abcdefghijklmnopqrstuvwxyz".split("");
   let clickAudio = new Audio(coinAudio);
+  clickAudio.playbackRate = 2;
   clickAudio.volume = 0.02;
 
   let handleClick = letter => {
